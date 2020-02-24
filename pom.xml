@@ -123,7 +123,6 @@
       <artifactId>mysql-connector-java</artifactId>
       <version>8.0.18</version>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/com.mchange/c3p0 -->
     <dependency>
       <groupId>com.mchange</groupId>
       <artifactId>c3p0</artifactId>
@@ -131,13 +130,11 @@
     </dependency>
 
     <!-- 图片处理 -->
-    <!-- https://mvnrepository.com/artifact/net.coobird/thumbnailator -->
     <dependency>
       <groupId>net.coobird</groupId>
       <artifactId>thumbnailator</artifactId>
       <version>0.4.8</version>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/com.github.penggle/kaptcha -->
     <dependency>
       <groupId>com.github.penggle</groupId>
       <artifactId>kaptcha</artifactId>
