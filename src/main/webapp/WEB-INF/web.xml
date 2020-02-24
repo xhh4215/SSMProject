@@ -3,8 +3,8 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1" metadata-complete="true">
   <display-name ></display-name>
-<!--  设置默认的访问界面-->
-  <welcome-file-list>
-    <welcome-file>index.jsp</welcome-file>
-  </welcome-file-list>
+    <!--  设置默认的访问界面-->
+     <welcome-file-list>
+       <welcome-file>index.jsp</welcome-file>
+      </welcome-file-list>
 </web-app>
