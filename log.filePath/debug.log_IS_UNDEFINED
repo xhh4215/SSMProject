@@ -1,0 +1,6 @@
+2020-02-26 22:11:03.805[main]DEBUGcom.ssm.project.dao.ShopDao.insertShop-==>  Preparing: INSERT INTO tb_shop(owner_id,area_id,shop_category_id,shop_name,shop_desc,shop_addr, phone,shop_img,priority,create_time,last_edit_time,enable_status,advice) VALUES (?,?,?,?,?,?,? , ?,?,?,?,?,? ) 
+2020-02-26 22:11:03.894[main]DEBUGcom.ssm.project.dao.ShopDao.insertShop-==> Parameters: 1(Long), 12(Integer), 1(Long), 德源苑(String), test(String), 山西大学商务学院(String), 19969692732(String), test(String), null, 2020-02-26 22:11:02.99(Timestamp), null, 1(Integer), 审核中(String)
+2020-02-26 22:11:03.904[main]DEBUGcom.ssm.project.dao.ShopDao.insertShop-<==    Updates: 1
+2020-02-26 22:37:49.880[main]DEBUGcom.ssm.project.dao.ShopDao.updateShop-==>  Preparing: update tb_shop SET shop_desc=?, shop_addr=?, last_edit_time=? where shop_id=? 
+2020-02-26 22:37:50.002[main]DEBUGcom.ssm.project.dao.ShopDao.updateShop-==> Parameters: 一个你总去的餐厅(String), 山西大学商务学院森伯10 旁边(String), 2020-02-26 22:37:49.032(Timestamp), 1(Long)
+2020-02-26 22:37:50.007[main]DEBUGcom.ssm.project.dao.ShopDao.updateShop-<==    Updates: 1
