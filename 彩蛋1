@@ -1,0 +1,4 @@
+SSM重点知识
+- SpringMVC：DispatcherServlet 前端控制钱 拦截请求 之后分发到对应的Controller 处理结果生成响应返回到前端
+- Spring IOC和AOP： IOC由Spring控制对象的生命周期和对象间的关系  AOP面向切面编程  动态代理
+- MyBatis ：ORM
