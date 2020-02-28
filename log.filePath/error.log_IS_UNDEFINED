@@ -1,0 +1,7 @@
+2020-02-27 22:57:10.014[main]ERRORcom.ssm.project.utils.ImageUtil-javax.imageio.IIOException: Can't read input file!
+2020-02-27 22:58:48.048[main]ERRORcom.ssm.project.utils.ImageUtil-javax.imageio.IIOException: Can't read input file!
+2020-02-27 22:59:02.288[main]ERRORcom.ssm.project.utils.ImageUtil-javax.imageio.IIOException: Can't read input file!
+2020-02-27 23:01:46.246[main]ERRORcom.ssm.project.utils.ImageUtil-java.io.FileNotFoundException: /home/xiaohei/image/upload/images/item/shop/19/2020022723014524684.jpg (No such file or directory)
+2020-02-27 23:05:07.473[main]ERRORcom.ssm.project.utils.ImageUtil-java.io.FileNotFoundException: /home/xiaohei/image/upload/images/item/shop/22/2020022723050669508.jpg (No such file or directory)
+2020-02-27 23:05:34.312[main]ERRORcom.ssm.project.utils.ImageUtil-java.io.FileNotFoundException: /home/xiaohei/image/upload/item/shop23/2020022723053335903.jpg (No such file or directory)
+2020-02-27 23:09:59.157[main]ERRORcom.ssm.project.utils.ImageUtil-java.io.FileNotFoundException: /Users/smallblack/document/UploadImage/upload/item/shop24/2020022723095842253.jpg (No such file or directory)

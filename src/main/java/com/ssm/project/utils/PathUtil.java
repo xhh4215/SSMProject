@@ -7,7 +7,8 @@ package com.ssm.project.utils;
  */
 public class PathUtil {
     //获取系统的分隔符
-    private static String seperator = System.getProperty("file.seperator");
+    private static String seperator = System.getProperty("file.separator");
+
 
     /***
      * 获取项目图片的跟路径
@@ -19,7 +20,7 @@ public class PathUtil {
         if (os.toLowerCase().startsWith("win")){
             basePath = "D:/projectdev/image";
         }else{
-           basePath = "/home/xiaohei/image/";
+           basePath = "/Users/smallblack/document/UploadImage/";
         }
         basePath = basePath.replace("/",seperator);
         return  basePath;

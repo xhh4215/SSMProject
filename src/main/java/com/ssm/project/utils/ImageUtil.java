@@ -9,6 +9,7 @@ import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import javax.imageio.ImageIO;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
@@ -50,20 +51,20 @@ public class ImageUtil {
 
     /***
      * 实现缩列图的功能
-     * @param thumbnail
+     * @param thumbnailInputStream
      * @param targetAddr :图片的存储位置
      * @return 返回图片的相对值路径
      */
-    public static String generateThumbnail(File thumbnail, String targetAddr) {
+    public static String generateThumbnail(InputStream thumbnailInputStream,String fileName , String targetAddr) {
         String realFileName = getRandomFileName();
-        String extension = getFileExtension(thumbnail);
+        String extension = getFileExtension(fileName);
         makeDirPath(targetAddr);
         String relativeAddr = targetAddr + realFileName + extension;
         logger.debug("current relative path is" + relativeAddr);
         File dest = new File(PathUtil.getImgBasePath() + relativeAddr);
         logger.debug("current complete path is" + PathUtil.getImgBasePath() + relativeAddr);
         try {
-            Thumbnails.of(thumbnail)
+            Thumbnails.of(thumbnailInputStream)
                     .size(200, 200)
                     .watermark(Positions.BOTTOM_RIGHT, ImageIO.read(new File(basePath + "/watermark.jpg")), 0.25f)
                     .outputQuality(0.8f)
@@ -83,26 +84,25 @@ public class ImageUtil {
     private static void makeDirPath(String targetAddr) {
         String realFilePath = PathUtil.getImgBasePath() + targetAddr;
         File dirPath = new File(realFilePath);
-        if (dirPath.exists()) {
+        if (!dirPath.exists()) {
             dirPath.mkdirs();
         }
     }
 
     /***
      * 获取输入文件的输入名
-     * @param commonsMultipartFile
+     * @param fileName
      * @return 返回的是文件的扩展名
      */
-    private static String getFileExtension(File commonsMultipartFile) {
-        String originalFileName = commonsMultipartFile.getName();
-        return originalFileName.substring(originalFileName.lastIndexOf("."));
+    private static String getFileExtension(String fileName) {
+        return fileName.substring(fileName.lastIndexOf("."));
     }
 
     /***
      * 生成随机文件名， 当前时间精确到秒 +5位随机数
      * @return  返回的获取的随机的文件的名称
      */
-    private static String getRandomFileName() {
+    public static String getRandomFileName() {
         int randomNumber = random.nextInt(99999) + 10000;
         String nowTimeStr = mDateFormat.format(new Date());
         return nowTimeStr + randomNumber;
