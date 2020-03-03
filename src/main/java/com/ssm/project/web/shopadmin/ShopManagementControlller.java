@@ -1,10 +1,14 @@
 package com.ssm.project.web.shopadmin;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ssm.project.dto.ShopExecution;
+import com.ssm.project.entity.Area;
 import com.ssm.project.entity.PersonInfo;
 import com.ssm.project.entity.Shop;
+import com.ssm.project.entity.ShopCategory;
 import com.ssm.project.enums.ShopStateEnum;
 import com.ssm.project.exception.ShopOperatorException;
+import com.ssm.project.services.AreaService;
+import com.ssm.project.services.ShopCategoryService;
 import com.ssm.project.services.ShopService;
 import com.ssm.project.utils.HttpServletRequestUtil;
 import org.slf4j.Logger;
@@ -19,7 +23,9 @@ import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import javax.servlet.http.HttpServletRequest;
 import java.io.*;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -28,10 +34,15 @@ public class ShopManagementControlller {
     Logger logger = LoggerFactory.getLogger(ShopManagementControlller.class);
     @Autowired
     private ShopService shopService;
+    @Autowired
+    private ShopCategoryService shopCategoryService;
+    @Autowired
+    private AreaService areaService;
 
     @ResponseBody
     @RequestMapping(value = "/registershop", method = RequestMethod.POST)
     /**
+     * 注册商店
      * @param HttpServletRequest 封装http请求的全部信息的对象
      */
     private Map<String, Object> registerShop(HttpServletRequest request) {
@@ -93,4 +104,24 @@ public class ShopManagementControlller {
             return modelMap;
         }
     }
+
+    @ResponseBody
+    @RequestMapping(value = "/getshopinitinfo",method = RequestMethod.GET)
+    private Map<String,Object> getShopInitInfo(){
+        Map<String, Object> modelMap = new HashMap<>();
+        List<ShopCategory>  shopCategoryList = new ArrayList<>();
+        List<Area> areaList = new ArrayList<>();
+        try{
+            shopCategoryList = shopCategoryService.getShopCategoryList(new ShopCategory());
+            areaList = areaService.getAreaList();
+            modelMap.put("shopCategoryList",shopCategoryList);
+            modelMap.put("areaList",areaList);
+        }catch (Exception e){
+            modelMap.put("success",false);
+            modelMap.put("errMsg",e.getMessage());
+        }
+         return  modelMap;
+    }
+
+
 }
