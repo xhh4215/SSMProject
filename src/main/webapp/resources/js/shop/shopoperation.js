@@ -1,6 +1,6 @@
 $(function () {
     var initUrl = '/SSMProject/shopadmin/getshopinitinfo';
-    var registerShopUrl = '/SSMProject/shopadmin/registershop';
+    var registerShopUrl ='/SSMProject/shopadmin/registershop';
     getShopInitInfo();
     function getShopInitInfo() {
         $.getJSON(initUrl,function (data){
@@ -8,10 +8,10 @@ $(function () {
                 var tempHtml= "";
                 var tempAreaHtml= "";
                 data.shopCategoryList.map(function (item, index) {
-                    tempHtml  +='<option data-id="' +item.shopCategoryId+'">'+item.shopCategoryName+'</option>';
+                    tempHtml+='<option data-id="' +item.shopCategoryId+'">'+item.shopCategoryName+'</option>';
                 });
                 data.areaList.map(function (value, index) {
-                    tempAreaHtml  +='<option data-id="' +value.areaId+'">'+item.areaName+'</option>';
+                    tempAreaHtml+='<option data-id="' +value.areaId+'">'+value.areaName+'</option>';
                 });
 
                 $('#shop-category').html(tempHtml);
@@ -42,22 +42,22 @@ $(function () {
             var formData= new FormData();
             formData.append('shopImg',shopImg);
             formData.append('shopStr',JSON.stringify(shop));
-            $.ajax({
-                url:registerShopUrl,
-                type:'POST',
-                data:formData,
-                contentType:false,
-                processData:false,
-                cache:false,
-                success:function(data){
+            var verifyCodeActual=$('#j_captcha').val();
+            if (!verifyCodeActual){
+                $.toast('请输入验证码')
+                return;
+            }
+            formData.append('verifyCodeActual',verifyCodeActual);
+            $.ajax({url:registerShopUrl, type:'POST', data:formData, contentType:false, processData:false, cache:false, success:function(data){
                     if (data.success){
                         $.toast('提交成功！')
                     }else{
                         $.toast('提交失败！'+data.errMsg);
-
                     }
+                    $('captcha_img').click();
                 }
             });
         });
     }
-})
+
+});

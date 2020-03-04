@@ -10,6 +10,7 @@ import com.ssm.project.exception.ShopOperatorException;
 import com.ssm.project.services.AreaService;
 import com.ssm.project.services.ShopCategoryService;
 import com.ssm.project.services.ShopService;
+import com.ssm.project.utils.CodeUtil;
 import com.ssm.project.utils.HttpServletRequestUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -48,6 +49,11 @@ public class ShopManagementControlller {
     private Map<String, Object> registerShop(HttpServletRequest request) {
         logger.debug("商铺注册开始");
         Map<String, Object> modelMap = new HashMap<>();
+        if (!CodeUtil.checkVerifyCode(request)){
+            modelMap.put("success", false);
+            modelMap.put("errorMsg", "输入验证码有错");
+            return modelMap;
+        }
         // 1 接收并转化相应的信息
         String shopStr = HttpServletRequestUtil.getString(request, "shopStr");
         ObjectMapper mapper = new ObjectMapper();
@@ -104,7 +110,6 @@ public class ShopManagementControlller {
             return modelMap;
         }
     }
-
     @ResponseBody
     @RequestMapping(value = "/getshopinitinfo",method = RequestMethod.GET)
     private Map<String,Object> getShopInitInfo(){
@@ -116,9 +121,10 @@ public class ShopManagementControlller {
             areaList = areaService.getAreaList();
             modelMap.put("shopCategoryList",shopCategoryList);
             modelMap.put("areaList",areaList);
+            modelMap.put("success",true);
         }catch (Exception e){
-            modelMap.put("success",false);
             modelMap.put("errMsg",e.getMessage());
+            modelMap.put("success",false);
         }
          return  modelMap;
     }
