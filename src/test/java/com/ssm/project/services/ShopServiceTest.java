@@ -27,7 +27,7 @@ public class ShopServiceTest extends BaseTest {
         PersonInfo ower = new PersonInfo();
         ower.setUserId(1L);
         Area area = new Area();
-        area.setAreaId(12);
+        area.setAreaId(1);
         ShopCategory shopCategory = new ShopCategory();
         shopCategory.setShopCategoryId(1L);
         shop.setOwner(ower);

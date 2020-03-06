@@ -15,14 +15,14 @@ import static org.junit.Assert.assertEquals;
 public class ShopDaoTest extends BaseTest {
     @Autowired
     private ShopDao shopDao;
+
     @Test
-    @Ignore
     public void testInsertShop(){
         Shop shop = new Shop();
         PersonInfo ower = new PersonInfo();
         ower.setUserId(1L);
         Area area = new Area();
-        area.setAreaId(12);
+        area.setAreaId(1);
         ShopCategory shopCategory = new ShopCategory();
         shopCategory.setShopCategoryId(1L);
         shop.setOwner(ower);
@@ -42,7 +42,7 @@ public class ShopDaoTest extends BaseTest {
     @Test
     public void testUpdateShop(){
         Shop shop = new Shop();
-        shop.setShopId(1l);
+        shop.setShopId(23l);
         shop.setShopDesc("一个你总去的餐厅");
         shop.setShopAddr("山西大学商务学院森伯10 旁边");
         shop.setLastEditTime(new Date());
