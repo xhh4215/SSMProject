@@ -28,6 +28,24 @@ public class ImageUtil {
     private static final Random random = new Random();
 
     /***
+     * storePath 是文件路径还是目录路径
+     * @param storePath
+     */
+    public static  void deleteFileOrPath(String storePath){
+        File fileOrPath = new File(PathUtil.getImgBasePath()+storePath);
+        if (fileOrPath.exists()){
+            if (fileOrPath.isDirectory()){
+                File file[] = fileOrPath.listFiles();
+                for (int i=0;i<file.length;i++){
+                    file[i].delete();
+                }
+            }
+            fileOrPath.delete();
+        }
+
+    }
+
+    /***
      * 将CommonsMultipartFile 转化为 File
      * @param commonsMultipartFile
      * @return  转化之后的File对象

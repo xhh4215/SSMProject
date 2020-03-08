@@ -7,6 +7,8 @@ import com.ssm.project.entity.PersonInfo;
 import com.ssm.project.entity.Shop;
 import com.ssm.project.entity.ShopCategory;
 import com.ssm.project.enums.ShopStateEnum;
+import com.ssm.project.exception.ShopOperatorException;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -22,6 +24,18 @@ public class ShopServiceTest extends BaseTest {
     @Autowired
     private  ShopService shopService;
     @Test
+    public void testModifyShop() throws ShopOperatorException,FileNotFoundException{
+        Shop shop = new Shop();
+        shop.setShopId(27l);
+        shop.setShopName("修改后的店铺名称");
+        File img = new File("/Users/smallblack/document/xiaopangzi.jpg");
+        InputStream is = new FileInputStream(img);
+       ShopExecution shopExecution =  shopService.modifyShop(shop,is,"dabai.jpg");
+       System.out.println("新的图片的地址是"+shopExecution.getShop().getShopImg());
+
+    }
+    @Test
+    @Ignore
     public void testAddShop() throws FileNotFoundException {
         Shop shop = new Shop();
         PersonInfo ower = new PersonInfo();

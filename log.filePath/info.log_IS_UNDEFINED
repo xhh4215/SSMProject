@@ -1,63 +1,18 @@
-2020-03-06 00:08:22.191[main]DEBUGcom.ssm.project.dao.AreaDao.queryArea-==>  Preparing: SELECT area_id,area_name, priority,create_time,last_edit_time FROM tb_area ORDER BY priority DESC 
-2020-03-06 00:08:22.261[main]DEBUGcom.ssm.project.dao.AreaDao.queryArea-==> Parameters: 
-2020-03-06 00:08:22.316[main]DEBUGcom.ssm.project.dao.AreaDao.queryArea-<==      Total: 3
-2020-03-06 00:10:55.261[main]DEBUGc.s.project.dao.ShopCategoryDao.queryShopCategory-==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category WHERE parent_id is not null ORDER BY priority DESC 
-2020-03-06 00:10:55.354[main]DEBUGc.s.project.dao.ShopCategoryDao.queryShopCategory-==> Parameters: 
-2020-03-06 00:10:55.395[main]DEBUGc.s.project.dao.ShopCategoryDao.queryShopCategory-<==      Total: 0
-2020-03-06 00:12:10.238[main]DEBUGc.s.project.dao.ShopCategoryDao.queryShopCategory-==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category WHERE parent_id is not null ORDER BY priority DESC 
-2020-03-06 00:12:10.301[main]DEBUGc.s.project.dao.ShopCategoryDao.queryShopCategory-==> Parameters: 
-2020-03-06 00:12:10.368[main]DEBUGc.s.project.dao.ShopCategoryDao.queryShopCategory-<==      Total: 1
-2020-03-06 22:41:11.209[main]DEBUGcom.ssm.project.dao.AreaDao.queryArea-==>  Preparing: SELECT area_id,area_name, priority,create_time,last_edit_time FROM tb_area ORDER BY priority DESC 
-2020-03-06 22:41:11.267[main]DEBUGcom.ssm.project.dao.AreaDao.queryArea-==> Parameters: 
-2020-03-06 22:41:11.343[main]DEBUGcom.ssm.project.dao.AreaDao.queryArea-<==      Total: 0
-2020-03-06 22:44:01.736[main]DEBUGcom.ssm.project.dao.AreaDao.queryArea-==>  Preparing: SELECT area_id,area_name, priority,create_time,last_edit_time FROM tb_area ORDER BY priority DESC 
-2020-03-06 22:44:01.809[main]DEBUGcom.ssm.project.dao.AreaDao.queryArea-==> Parameters: 
-2020-03-06 22:44:01.872[main]DEBUGcom.ssm.project.dao.AreaDao.queryArea-<==      Total: 6
-2020-03-06 22:57:45.986[main]DEBUGcom.ssm.project.dao.AreaDao.queryArea-==>  Preparing: SELECT area_id,area_name, priority,create_time,last_edit_time FROM tb_area ORDER BY priority DESC 
-2020-03-06 22:57:46.045[main]DEBUGcom.ssm.project.dao.AreaDao.queryArea-==> Parameters: 
-2020-03-06 22:57:46.097[main]DEBUGcom.ssm.project.dao.AreaDao.queryArea-<==      Total: 6
-2020-03-06 22:59:17.011[main]DEBUGcom.ssm.project.dao.AreaDao.queryArea-==>  Preparing: SELECT area_id,area_name, priority,create_time,last_edit_time FROM tb_area ORDER BY priority DESC 
-2020-03-06 22:59:17.107[main]DEBUGcom.ssm.project.dao.AreaDao.queryArea-==> Parameters: 
-2020-03-06 22:59:17.163[main]DEBUGcom.ssm.project.dao.AreaDao.queryArea-<==      Total: 6
-2020-03-06 23:00:26.386[main]DEBUGcom.ssm.project.dao.ShopDao.insertShop-==>  Preparing: INSERT INTO tb_shop(owner_id,area_id,shop_category_id, shop_name,shop_desc,shop_addr, phone,shop_img,priority, create_time,last_edit_time,enable_status, advice) VALUES (?,?,?,?, ?,?,?, ?,?, ?,?,?,?) 
-2020-03-06 23:00:26.467[main]DEBUGcom.ssm.project.dao.ShopDao.insertShop-==> Parameters: 3(Long), 2(Integer), 1(Long), 德源苑(String), test(String), 山西大学商务学院(String), 19969692732(String), test(String), null, 2020-03-06 23:00:25.448(Timestamp), null, 1(Integer), 审核中(String)
-2020-03-06 23:14:42.301[main]DEBUGcom.ssm.project.dao.ShopDao.insertShop-==>  Preparing: INSERT INTO tb_shop(owner_id,area_id,shop_category_id, shop_name,shop_desc,shop_addr, phone,shop_img,priority, create_time,last_edit_time,enable_status, advice) VALUES (?,?,?,?, ?,?,?, ?,?, ?,?,?,?) 
-2020-03-06 23:14:42.375[main]DEBUGcom.ssm.project.dao.ShopDao.insertShop-==> Parameters: 3(Long), 2(Integer), 1(Long), 德源苑(String), test(String), 山西大学商务学院(String), 19969692732(String), test(String), null, 2020-03-06 23:14:41.47(Timestamp), null, 1(Integer), 审核中(String)
-2020-03-06 23:15:25.648[main]DEBUGcom.ssm.project.dao.ShopDao.insertShop-==>  Preparing: INSERT INTO tb_shop(owner_id,area_id,shop_category_id, shop_name,shop_desc,shop_addr, phone,shop_img,priority, create_time,last_edit_time,enable_status, advice) VALUES (?,?,?,?, ?,?,?, ?,?, ?,?,?,?) 
-2020-03-06 23:15:25.715[main]DEBUGcom.ssm.project.dao.ShopDao.insertShop-==> Parameters: 3(Long), 2(Integer), 1(Long), 德源苑(String), test(String), 山西大学商务学院(String), 19969692732(String), test(String), null, 2020-03-06 23:15:24.928(Timestamp), null, 1(Integer), 审核中(String)
-2020-03-06 23:16:54.927[main]DEBUGcom.ssm.project.dao.ShopDao.insertShop-==>  Preparing: INSERT INTO tb_shop(owner_id,area_id,shop_category_id, shop_name,shop_desc,shop_addr, phone,shop_img,priority, create_time,last_edit_time,enable_status, advice) VALUES (?,?,?,?, ?,?,?, ?,?, ?,?,?,?) 
-2020-03-06 23:16:54.998[main]DEBUGcom.ssm.project.dao.ShopDao.insertShop-==> Parameters: 3(Long), 2(Integer), 1(Long), 德源苑(String), test(String), 山西大学商务学院(String), 19969692732(String), test(String), null, 2020-03-06 23:16:54.07(Timestamp), null, 1(Integer), 审核中(String)
-2020-03-06 23:16:55.003[main]DEBUGcom.ssm.project.dao.ShopDao.insertShop-<==    Updates: 1
-2020-03-06 23:17:40.612[main]DEBUGcom.ssm.project.dao.ShopDao.updateShop-==>  Preparing: update tb_shop SET shop_desc=?, shop_addr=?, last_edit_time=? where shop_id=? 
-2020-03-06 23:17:40.669[main]DEBUGcom.ssm.project.dao.ShopDao.updateShop-==> Parameters: 一个你总去的餐厅(String), 山西大学商务学院森伯10 旁边(String), 2020-03-06 23:17:39.81(Timestamp), 1(Long)
-2020-03-06 23:17:40.675[main]DEBUGcom.ssm.project.dao.ShopDao.updateShop-<==    Updates: 0
-2020-03-06 23:18:31.489[main]DEBUGcom.ssm.project.dao.ShopDao.updateShop-==>  Preparing: update tb_shop SET shop_desc=?, shop_addr=?, last_edit_time=? where shop_id=? 
-2020-03-06 23:18:31.550[main]DEBUGcom.ssm.project.dao.ShopDao.updateShop-==> Parameters: 一个你总去的餐厅(String), 山西大学商务学院森伯10 旁边(String), 2020-03-06 23:18:30.667(Timestamp), 5(Long)
-2020-03-06 23:18:31.559[main]DEBUGcom.ssm.project.dao.ShopDao.updateShop-<==    Updates: 1
-2020-03-06 23:18:52.395[main]DEBUGcom.ssm.project.dao.ShopDao.updateShop-==>  Preparing: update tb_shop SET shop_desc=?, shop_addr=?, last_edit_time=? where shop_id=? 
-2020-03-06 23:18:52.495[main]DEBUGcom.ssm.project.dao.ShopDao.updateShop-==> Parameters: 一个你总去的餐厅(String), 山西大学商务学院森伯10 旁边(String), 2020-03-06 23:18:51.592(Timestamp), 5(Long)
-2020-03-06 23:18:52.500[main]DEBUGcom.ssm.project.dao.ShopDao.updateShop-<==    Updates: 1
-2020-03-06 23:19:27.233[main]DEBUGcom.ssm.project.dao.ShopDao.updateShop-==>  Preparing: update tb_shop SET shop_desc=?, shop_addr=?, last_edit_time=? where shop_id=? 
-2020-03-06 23:19:27.356[main]DEBUGcom.ssm.project.dao.ShopDao.updateShop-==> Parameters: 一个你总去的餐厅(String), 山西大学商务学院森伯10 旁边(String), 2020-03-06 23:19:26.475(Timestamp), 5(Long)
-2020-03-06 23:19:27.360[main]DEBUGcom.ssm.project.dao.ShopDao.updateShop-<==    Updates: 1
-2020-03-06 23:20:39.240[main]DEBUGc.s.project.dao.ShopCategoryDao.queryShopCategory-==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category WHERE parent_id is not null ORDER BY priority DESC 
-2020-03-06 23:20:39.298[main]DEBUGc.s.project.dao.ShopCategoryDao.queryShopCategory-==> Parameters: 
-2020-03-06 23:20:39.344[main]DEBUGc.s.project.dao.ShopCategoryDao.queryShopCategory-<==      Total: 0
-2020-03-06 23:22:15.775[main]DEBUGc.s.project.dao.ShopCategoryDao.queryShopCategory-==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category WHERE parent_id is not null ORDER BY priority DESC 
-2020-03-06 23:22:15.862[main]DEBUGc.s.project.dao.ShopCategoryDao.queryShopCategory-==> Parameters: 
-2020-03-06 23:22:15.916[main]DEBUGc.s.project.dao.ShopCategoryDao.queryShopCategory-<==      Total: 1
-2020-03-06 23:32:23.097[main]DEBUGcom.ssm.project.dao.ShopDao.insertShop-==>  Preparing: INSERT INTO tb_shop(owner_id,area_id,shop_category_id, shop_name,shop_desc,shop_addr, phone,shop_img,priority, create_time,last_edit_time,enable_status, advice) VALUES (?,?,?,?, ?,?,?, ?,?, ?,?,?,?) 
-2020-03-06 23:32:23.202[main]DEBUGcom.ssm.project.dao.ShopDao.insertShop-==> Parameters: 1(Long), 1(Integer), 1(Long), 德源苑(String), test(String), 山西大学商务学院(String), 19969692732(String), test(String), null, 2020-03-06 23:32:22.308(Timestamp), null, 1(Integer), 审核中(String)
-2020-03-06 23:32:23.212[main]DEBUGcom.ssm.project.dao.ShopDao.insertShop-<==    Updates: 1
-2020-03-06 23:33:14.179[main]DEBUGcom.ssm.project.dao.ShopDao.updateShop-==>  Preparing: update tb_shop SET shop_desc=?, shop_addr=?, last_edit_time=? where shop_id=? 
-2020-03-06 23:33:14.347[main]DEBUGcom.ssm.project.dao.ShopDao.updateShop-==> Parameters: 一个你总去的餐厅(String), 山西大学商务学院森伯10 旁边(String), 2020-03-06 23:33:13.088(Timestamp), 5(Long)
-2020-03-06 23:33:14.388[main]DEBUGcom.ssm.project.dao.ShopDao.updateShop-<==    Updates: 0
-2020-03-06 23:37:15.506[main]DEBUGcom.ssm.project.dao.ShopDao.updateShop-==>  Preparing: update tb_shop SET shop_desc=?, shop_addr=?, last_edit_time=? where shop_id=? 
-2020-03-06 23:37:15.570[main]DEBUGcom.ssm.project.dao.ShopDao.updateShop-==> Parameters: 一个你总去的餐厅(String), 山西大学商务学院森伯10 旁边(String), 2020-03-06 23:37:14.602(Timestamp), 1(Long)
-2020-03-06 23:37:15.582[main]DEBUGcom.ssm.project.dao.ShopDao.updateShop-<==    Updates: 0
-2020-03-06 23:37:43.889[main]DEBUGcom.ssm.project.dao.ShopDao.updateShop-==>  Preparing: update tb_shop SET shop_desc=?, shop_addr=?, last_edit_time=? where shop_id=? 
-2020-03-06 23:37:43.951[main]DEBUGcom.ssm.project.dao.ShopDao.updateShop-==> Parameters: 一个你总去的餐厅(String), 山西大学商务学院森伯10 旁边(String), 2020-03-06 23:37:43.107(Timestamp), 23(Long)
-2020-03-06 23:37:43.956[main]DEBUGcom.ssm.project.dao.ShopDao.updateShop-<==    Updates: 1
-2020-03-06 23:43:54.391[main]DEBUGcom.ssm.project.dao.ShopDao.updateShop-==>  Preparing: update tb_shop SET shop_desc=?, shop_addr=?, last_edit_time=? where shop_id=? 
-2020-03-06 23:43:54.491[main]DEBUGcom.ssm.project.dao.ShopDao.updateShop-==> Parameters: 一个你总去的餐厅(String), 山西大学商务学院森伯10 旁边(String), 2020-03-06 23:43:53.079(Timestamp), 23(Long)
-2020-03-06 23:43:54.498[main]DEBUGcom.ssm.project.dao.ShopDao.updateShop-<==    Updates: 1
+2020-03-07 01:08:35.980[main]DEBUGcom.ssm.project.dao.ShopDao.queryByShopId-==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, a.area_id, a.area_name, sc.shop_category_id, sc.shop_category_name, FROM tb_shop s ,tb_area a,tb_shop_category sc WHERE s.area_id = a.area_id AND s.shop_category_id = sc.shop_category_id AND s.shop_id = ? FROM tb_shop WHERE 
+2020-03-07 01:08:36.052[main]DEBUGcom.ssm.project.dao.ShopDao.queryByShopId-==> Parameters: 27(Long)
+2020-03-07 01:18:25.838[main]DEBUGcom.ssm.project.dao.ShopDao.queryByShopId-==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, a.area_id, a.area_name, sc.shop_category_id, sc.shop_category_name, FROM tb_shop s ,tb_area a,tb_shop_category sc WHERE s.area_id = a.area_id AND s.shop_category_id = sc.shop_category_id AND s.shop_id = ? 
+2020-03-07 01:18:25.899[main]DEBUGcom.ssm.project.dao.ShopDao.queryByShopId-==> Parameters: 27(Long)
+2020-03-07 01:19:51.718[main]DEBUGcom.ssm.project.dao.ShopDao.queryByShopId-==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, a.area_id, a.area_name, sc.shop_category_id, sc.shop_category_name FROM tb_shop s ,tb_area a,tb_shop_category sc WHERE s.area_id = a.area_id AND s.shop_category_id = sc.shop_category_id AND s.shop_id = ? 
+2020-03-07 01:19:51.773[main]DEBUGcom.ssm.project.dao.ShopDao.queryByShopId-==> Parameters: 27(Long)
+2020-03-07 01:19:51.839[main]DEBUGcom.ssm.project.dao.ShopDao.queryByShopId-<==      Total: 1
+2020-03-07 01:48:11.803[main]DEBUGcom.ssm.project.dao.ShopDao.queryByShopId-==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, a.area_id, a.area_name, sc.shop_category_id, sc.shop_category_name FROM tb_shop s ,tb_area a,tb_shop_category sc WHERE s.area_id = a.area_id AND s.shop_category_id = sc.shop_category_id AND s.shop_id = ? 
+2020-03-07 01:48:11.865[main]DEBUGcom.ssm.project.dao.ShopDao.queryByShopId-==> Parameters: 27(Long)
+2020-03-07 01:48:11.921[main]DEBUGcom.ssm.project.dao.ShopDao.queryByShopId-<==      Total: 1
+2020-03-07 01:48:11.938[main]DEBUGcom.ssm.project.utils.ImageUtil-current relative path isupload/item/shop27/2020030701481191650.jpg
+2020-03-07 01:48:11.939[main]DEBUGcom.ssm.project.utils.ImageUtil-current complete path is/Users/smallblack/document/UploadImage/upload/item/shop27/2020030701481191650.jpg
+2020-03-07 01:48:12.495[main]DEBUGcom.ssm.project.dao.ShopDao.updateShop-==>  Preparing: update tb_shop SET shop_name=?, shop_img=?, last_edit_time=? where shop_id=? 
+2020-03-07 01:48:12.497[main]DEBUGcom.ssm.project.dao.ShopDao.updateShop-==> Parameters: 修改后的店铺名称(String), upload/item/shop27/2020030701481191650.jpg(String), 2020-03-07 01:48:12.458(Timestamp), 27(Long)
+2020-03-07 01:48:12.500[main]DEBUGcom.ssm.project.dao.ShopDao.updateShop-<==    Updates: 1
+2020-03-07 01:48:12.501[main]DEBUGcom.ssm.project.dao.ShopDao.queryByShopId-==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, a.area_id, a.area_name, sc.shop_category_id, sc.shop_category_name FROM tb_shop s ,tb_area a,tb_shop_category sc WHERE s.area_id = a.area_id AND s.shop_category_id = sc.shop_category_id AND s.shop_id = ? 
+2020-03-07 01:48:12.503[main]DEBUGcom.ssm.project.dao.ShopDao.queryByShopId-==> Parameters: 27(Long)
+2020-03-07 01:48:12.508[main]DEBUGcom.ssm.project.dao.ShopDao.queryByShopId-<==      Total: 1

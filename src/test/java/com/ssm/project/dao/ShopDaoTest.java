@@ -15,8 +15,15 @@ import static org.junit.Assert.assertEquals;
 public class ShopDaoTest extends BaseTest {
     @Autowired
     private ShopDao shopDao;
-
     @Test
+    public void testQueryByShopId(){
+        long shopid = 27l;
+        Shop shop = shopDao.queryByShopId(shopid);
+        System.out.print(shop.getArea().getAreaId());
+        System.out.print(shop.getArea().getAreaName());
+    }
+    @Test
+    @Ignore
     public void testInsertShop(){
         Shop shop = new Shop();
         PersonInfo ower = new PersonInfo();
@@ -40,6 +47,7 @@ public class ShopDaoTest extends BaseTest {
         assertEquals(effectNUmber,1);
     }
     @Test
+    @Ignore
     public void testUpdateShop(){
         Shop shop = new Shop();
         shop.setShopId(23l);

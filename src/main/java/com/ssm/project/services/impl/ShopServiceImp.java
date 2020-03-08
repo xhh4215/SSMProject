@@ -59,6 +59,46 @@ public class ShopServiceImp implements ShopService {
         // 操作成功返回对应的数据
         return new ShopExecution(ShopStateEnum.CHECK,shop);
     }
+    /***
+     * 更新店铺信息包括图片信息
+     * @param shop
+     * @param shopImgInputStream
+     * @param filename
+     * @return
+     */
+    @Override
+    public ShopExecution modifyShop(Shop shop, InputStream shopImgInputStream, String filename) {
+        if (shop==null&& shop.getShopId()==null){
+            return  new ShopExecution(ShopStateEnum.NULLSHOP);
+
+        }else{
+            try{
+                if (shopImgInputStream!=null&& filename!=null&&!"".equals(filename)){
+                    Shop temShop = shopDao.queryByShopId(shop.getShopId());
+                    if (temShop.getShopImg()!=null){
+                        ImageUtil.deleteFileOrPath(temShop.getShopImg());
+
+                    }
+                    addShopImg(shop,shopImgInputStream,filename);
+                }
+                shop.setLastEditTime(new Date());
+                int effectNumber = shopDao.updateShop(shop);
+                if (effectNumber<=0){
+                    return new ShopExecution(ShopStateEnum.INNEER_ERROR);
+                }else{
+                    shop =   shopDao.queryByShopId(shop.getShopId());
+                    return new ShopExecution(ShopStateEnum.SUCCESS,shop);
+                }
+            }catch (Exception e){
+                throw  new ShopOperatorException("modifyshop error"+e.getMessage());
+            }
+        }
+    }
+
+    @Override
+    public Shop getByShopId(long shopId) {
+        return shopDao.queryByShopId(shopId);
+    }
 
     /***
      * 存储图片的同时更行shop的图片地址信息

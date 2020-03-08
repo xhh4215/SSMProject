@@ -15,4 +15,6 @@ public interface ShopDao {
      * @return  增加的店铺数
      */
     int updateShop(Shop shop);
+
+    Shop queryByShopId(long shopId);
 }
