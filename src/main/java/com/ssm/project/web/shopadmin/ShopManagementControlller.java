@@ -57,7 +57,7 @@ public class ShopManagementControlller {
                 Shop shop = shopService.getByShopId(shopId);
                 List<Area> areaList = areaService.getAreaList();
                 modelmap.put("shop", shop);
-                modelmap.put("arealist", areaList);
+                modelmap.put("areaList", areaList);
                 modelmap.put("success", true);
             } catch (Exception e) {
                 modelmap.put("errorMsg", e.toString());
