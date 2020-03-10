@@ -32,5 +32,14 @@ public interface ShopService {
      */
      Shop  getByShopId(long shopId);
 
+    /***
+     * 根据shopCondition分页返回列表信息
+     * @param shopCondition  筛选添加
+     * @param pageIndex
+     * @param pageSize
+     * @return
+     */
+     ShopExecution getShopList(Shop shopCondition,int pageIndex,int pageSize);
+
 
 }

@@ -19,7 +19,7 @@
                  and parent_id is not null
              </if>
              <if test="shopCategoryCondition.parent!=null">
-             and parent_id = #{shopCategoryCondition.parent.shopCategoryId}
+                 and parent_id = #{shopCategoryCondition.parent.shopCategoryId}
              </if>
          </where>
          ORDER BY

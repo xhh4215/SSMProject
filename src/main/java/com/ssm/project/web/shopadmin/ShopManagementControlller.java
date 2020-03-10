@@ -13,6 +13,7 @@ import com.ssm.project.services.ShopCategoryService;
 import com.ssm.project.services.ShopService;
 import com.ssm.project.utils.CodeUtil;
 import com.ssm.project.utils.HttpServletRequestUtil;
+import org.omg.CORBA.OBJ_ADAPTER;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,6 +42,55 @@ public class ShopManagementControlller {
     private ShopCategoryService shopCategoryService;
     @Autowired
     private AreaService areaService;
+   @ResponseBody
+   @RequestMapping(value = "/getshopmanagementinfo",method = RequestMethod.GET)
+   private Map<String ,Object> getShopManagementInfo(HttpServletRequest request){
+       Map<String, Object> modelMap = new HashMap<>();
+      long shopId = HttpServletRequestUtil.getLong(request,"shopId");
+      if (shopId<=0){
+         Object currentShopObject =  request.getSession().getAttribute("currentShop");
+         if (currentShopObject==null){
+             modelMap.put("redirect",true);
+             modelMap.put("url","/SSMProject/shopadmin/shoplist");
+         }else{
+             Shop currentShop = (Shop) currentShopObject;
+             modelMap.put("redirect",false);
+             modelMap.put("shopId",currentShop.getShopId());
+         }
+      }else{
+          Shop currentShop = new Shop();
+          currentShop.setShopId(shopId);
+          request.getSession().setAttribute("currentShop",currentShop);
+          modelMap.put("redirect",false);
+      }
+      return modelMap;
+   }
+    /***
+     * 获取店铺列表
+     * @param request
+     * @return
+     */
+    @ResponseBody
+    @RequestMapping(value = "/getshoplist", method = RequestMethod.GET)
+    private Map<String, Object> getShopList(HttpServletRequest request) {
+        Map<String, Object> modelMap = new HashMap<>();
+        PersonInfo user = new PersonInfo();
+        user.setUserId(1l);
+        user.setName("栾桂明");
+        request.getSession().setAttribute("user", user);
+        try {
+            Shop shopCondition = new Shop();
+            shopCondition.setOwner(user);
+            ShopExecution shopExecution = shopService.getShopList(shopCondition, 0, 100);
+            modelMap.put("success", true);
+            modelMap.put("shopList", shopExecution.getShopList());
+            modelMap.put("user", user);
+        } catch (Exception e) {
+            modelMap.put("success", false);
+            modelMap.put("erMsg", e.getMessage());
+        }
+      return modelMap;
+    }
 
     /****
      * 通过ID获取商铺信息
@@ -48,7 +98,7 @@ public class ShopManagementControlller {
      * @return 商铺信息
      */
     @ResponseBody
-    @RequestMapping(value = "getshopbyid", method = RequestMethod.GET)
+    @RequestMapping(value = "/getshopbyid", method = RequestMethod.GET)
     private Map<String, Object> getShopById(HttpServletRequest request) {
         Map<String, Object> modelmap = new HashMap<>();
         Long shopId = HttpServletRequestUtil.getLong(request, "shopId");
@@ -148,6 +198,7 @@ public class ShopManagementControlller {
             return modelMap;
         }
     }
+
     /***
      * 获取商店的详细信息
      * @return

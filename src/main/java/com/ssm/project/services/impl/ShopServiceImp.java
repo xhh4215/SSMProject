@@ -7,6 +7,7 @@ import com.ssm.project.enums.ShopStateEnum;
 import com.ssm.project.exception.ShopOperatorException;
 import com.ssm.project.services.ShopService;
 import com.ssm.project.utils.ImageUtil;
+import com.ssm.project.utils.PageCalculator;
 import com.ssm.project.utils.PathUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,6 +15,8 @@ import org.springframework.transaction.annotation.Transactional;
 import java.io.File;
 import java.io.InputStream;
 import java.util.Date;
+import java.util.List;
+
 @Service
 public class ShopServiceImp implements ShopService {
     @Autowired
@@ -98,6 +101,30 @@ public class ShopServiceImp implements ShopService {
     @Override
     public Shop getByShopId(long shopId) {
         return shopDao.queryByShopId(shopId);
+    }
+
+    /****
+     * 获取商店列表
+     * @param shopCondition  筛选添加
+     * @param pageIndex
+     * @param pageSize
+     * @return
+     */
+    @Override
+    public ShopExecution getShopList(Shop shopCondition, int pageIndex, int pageSize) {
+        int rowIndex= PageCalculator.calculatedRowIndex(pageIndex,pageSize);
+        List<Shop> shopList = shopDao.queryShopList(shopCondition,rowIndex,pageSize);
+        int count = shopDao.queryShopCount(shopCondition);
+        ShopExecution shopExecution = new ShopExecution();
+        if (shopList!=null){
+            shopExecution.setShopList(shopList);
+            shopExecution.setCount(count);
+
+        }else{
+            shopExecution.setState(ShopStateEnum.INNEER_ERROR.getState());
+
+        }
+        return  shopExecution;
     }
 
     /***

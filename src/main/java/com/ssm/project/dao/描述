@@ -1,2 +1,44 @@
-当前的包内部存储的是前端传递过来的
-存储到数据库中的数据Dao
+#!/bin/bash
+NDK=/Users/smallblack/Desktop/NDK/android-ndk-r20b
+TOOLCHAIN=$NDK/toolchains/llvm/prebuilt/darwin-x86_64
+API=21
+function build_android{
+   ./configure \
+       --prefix=$PREFIX \
+       --libdir=$LIB_DIR \
+       --enable-shared \
+       --disable-static \
+       --enable-jni \
+       --disable-doc \
+       --disable-symver \
+       --disable-programs \
+       --target-os=android \
+       --arch=$ARCH \
+       --cpu=$CPU \
+       --cc=$CC \
+       --cxx=$CXX \
+       --enable-cross-compile \
+       --sysroot=$SYSROOT \
+       --extra-cflags="-Os -fpic $OPTIMIZE_CFLAGS" \
+       --extra-ldflags="$ADDI_LDFLAGS" \
+       --disable-asm \
+       $COMMON_FF_CFG_FLAGS
+make clean
+make -j8
+make install
+}
+# x86
+source "config-env.sh"
+OUTPUT_FOLDER="x86"
+ARCH="x86"
+CPU="x86"
+TOOL_CPU_NAME="i686"
+TOOL_PREFIX="$TOOLCHAIN/bin/${TOOL_CPU_NAME}-linux-android"
+
+CC="$TOOL_PREFIX$API-clang"
+CXX="$TOOL_PREFIX$API-clang++"
+SYSROOT="$NDK/toolchains/llvm/prebuilt/darwin-x86_64/sysroot"
+PREFIX="${PWD}/android/$OUTPUT_FOLDER"
+LIB_DIR="${PWD}/android/libs/$OUTPUT_FOLDER"
+OPTIMIZE_CFLAGS="-march=i686 -mtune=intel -mssse3 -mfpmath=sse -m32"
+build_android
