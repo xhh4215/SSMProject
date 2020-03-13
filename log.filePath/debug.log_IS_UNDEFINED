@@ -1,27 +1,18 @@
-2020-03-10 19:25:02.770[main]DEBUGcom.ssm.project.dao.ShopDao.queryShopList-==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, a.area_id, a.area_name, sc.shop_category_id, sc.shop_category_name FROM tb_shop s , tb_area a, tb_shop_category sc WHERE s.shop_category_id = ? AND s.area_id = a.area_id AND s.shop_category_id= sc.shop_category_id ORDER BY priority DESC LIMIT ?,? 
-2020-03-10 19:25:02.838[main]DEBUGcom.ssm.project.dao.ShopDao.queryShopList-==> Parameters: 1(Long), 0(Integer), 2(Integer)
-2020-03-10 19:25:02.970[main]DEBUGcom.ssm.project.dao.ShopDao.queryShopList-<==      Total: 2
-2020-03-10 19:25:02.987[main]DEBUGcom.ssm.project.dao.ShopDao.queryShopCount-==>  Preparing: SELECT count(1) FROM tb_shop s , tb_area a, tb_shop_category sc WHERE s.shop_category_id = ? AND s.area_id = a.area_id AND s.shop_category_id= sc.shop_category_id 
-2020-03-10 19:25:02.990[main]DEBUGcom.ssm.project.dao.ShopDao.queryShopCount-==> Parameters: 1(Long)
-2020-03-10 19:25:03.000[main]DEBUGcom.ssm.project.dao.ShopDao.queryShopCount-<==      Total: 1
-2020-03-10 19:26:03.327[main]DEBUGcom.ssm.project.dao.ShopDao.queryShopList-==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, a.area_id, a.area_name, sc.shop_category_id, sc.shop_category_name FROM tb_shop s , tb_area a, tb_shop_category sc WHERE s.shop_category_id = ? AND s.area_id = a.area_id AND s.shop_category_id= sc.shop_category_id ORDER BY priority DESC LIMIT ?,? 
-2020-03-10 19:26:03.378[main]DEBUGcom.ssm.project.dao.ShopDao.queryShopList-==> Parameters: 1(Long), 0(Integer), 2(Integer)
-2020-03-10 19:26:03.431[main]DEBUGcom.ssm.project.dao.ShopDao.queryShopList-<==      Total: 2
-2020-03-10 19:26:03.446[main]DEBUGcom.ssm.project.dao.ShopDao.queryShopCount-==>  Preparing: SELECT count(1) FROM tb_shop s , tb_area a, tb_shop_category sc WHERE s.shop_category_id = ? AND s.area_id = a.area_id AND s.shop_category_id= sc.shop_category_id 
-2020-03-10 19:26:03.447[main]DEBUGcom.ssm.project.dao.ShopDao.queryShopCount-==> Parameters: 1(Long)
-2020-03-10 19:26:03.453[main]DEBUGcom.ssm.project.dao.ShopDao.queryShopCount-<==      Total: 1
-2020-03-10 19:26:38.337[main]DEBUGcom.ssm.project.dao.ShopDao.queryShopList-==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, a.area_id, a.area_name, sc.shop_category_id, sc.shop_category_name FROM tb_shop s , tb_area a, tb_shop_category sc WHERE s.shop_category_id = ? AND s.area_id = a.area_id AND s.shop_category_id= sc.shop_category_id ORDER BY priority DESC LIMIT ?,? 
-2020-03-10 19:26:38.398[main]DEBUGcom.ssm.project.dao.ShopDao.queryShopList-==> Parameters: 1(Long), 4(Integer), 2(Integer)
-2020-03-10 19:26:38.502[main]DEBUGcom.ssm.project.dao.ShopDao.queryShopList-<==      Total: 0
-2020-03-10 19:26:38.527[main]DEBUGcom.ssm.project.dao.ShopDao.queryShopCount-==>  Preparing: SELECT count(1) FROM tb_shop s , tb_area a, tb_shop_category sc WHERE s.shop_category_id = ? AND s.area_id = a.area_id AND s.shop_category_id= sc.shop_category_id 
-2020-03-10 19:26:38.529[main]DEBUGcom.ssm.project.dao.ShopDao.queryShopCount-==> Parameters: 1(Long)
-2020-03-10 19:26:38.541[main]DEBUGcom.ssm.project.dao.ShopDao.queryShopCount-<==      Total: 1
-2020-03-10 23:08:35.575[main]DEBUGc.s.p.dao.ProdectCategoryDao.queryProductCategory-==>  Preparing: SELECT product_category_id, product_category_name, priority, create_time, shop_id FROM tb_product_category WHERE shop_id = ? 
-2020-03-10 23:08:35.638[main]DEBUGc.s.p.dao.ProdectCategoryDao.queryProductCategory-==> Parameters: 1(Long)
-2020-03-10 23:08:35.696[main]DEBUGc.s.p.dao.ProdectCategoryDao.queryProductCategory-<==      Total: 0
-2020-03-10 23:08:52.143[main]DEBUGc.s.p.dao.ProdectCategoryDao.queryProductCategory-==>  Preparing: SELECT product_category_id, product_category_name, priority, create_time, shop_id FROM tb_product_category WHERE shop_id = ? 
-2020-03-10 23:08:52.241[main]DEBUGc.s.p.dao.ProdectCategoryDao.queryProductCategory-==> Parameters: 23(Long)
-2020-03-10 23:08:52.295[main]DEBUGc.s.p.dao.ProdectCategoryDao.queryProductCategory-<==      Total: 1
-2020-03-10 23:10:30.675[main]DEBUGc.s.p.dao.ProdectCategoryDao.queryProductCategory-==>  Preparing: SELECT product_category_id, product_category_name, priority, create_time, shop_id FROM tb_product_category WHERE shop_id = ? 
-2020-03-10 23:10:30.730[main]DEBUGc.s.p.dao.ProdectCategoryDao.queryProductCategory-==> Parameters: 23(Long)
-2020-03-10 23:10:30.788[main]DEBUGc.s.p.dao.ProdectCategoryDao.queryProductCategory-<==      Total: 3
+2020-03-13 07:44:40.118[main]DEBUGc.s.p.dao.ProdectCategoryDao.queryProductCategory-==>  Preparing: SELECT product_category_id, product_category_name, priority, create_time, shop_id FROM tb_product_category WHERE shop_id = ? ORDER BY priority DESC 
+2020-03-13 07:44:40.193[main]DEBUGc.s.p.dao.ProdectCategoryDao.queryProductCategory-==> Parameters: 24(Long)
+2020-03-13 07:44:40.240[main]DEBUGc.s.p.dao.ProdectCategoryDao.queryProductCategory-<==      Total: 4
+2020-03-13 07:44:40.256[main]DEBUGc.s.p.dao.ProdectCategoryDao.deleteProductCategory-==>  Preparing: DELETE FROM tb_product_category WHERE product_category_id = ? AND shop_id = ? 
+2020-03-13 07:44:40.257[main]DEBUGc.s.p.dao.ProdectCategoryDao.deleteProductCategory-==> Parameters: 12(Long), 24(Long)
+2020-03-13 07:44:40.265[main]DEBUGc.s.p.dao.ProdectCategoryDao.deleteProductCategory-<==    Updates: 1
+2020-03-13 07:46:40.804[main]DEBUGc.s.p.dao.ProdectCategoryDao.queryProductCategory-==>  Preparing: SELECT product_category_id, product_category_name, priority, create_time, shop_id FROM tb_product_category WHERE shop_id = ? ORDER BY priority DESC 
+2020-03-13 07:46:40.857[main]DEBUGc.s.p.dao.ProdectCategoryDao.queryProductCategory-==> Parameters: 24(Long)
+2020-03-13 07:46:40.906[main]DEBUGc.s.p.dao.ProdectCategoryDao.queryProductCategory-<==      Total: 3
+2020-03-13 07:46:40.938[main]DEBUGc.s.p.dao.ProdectCategoryDao.deleteProductCategory-==>  Preparing: DELETE FROM tb_product_category WHERE product_category_id = ? AND shop_id = ? 
+2020-03-13 07:46:40.939[main]DEBUGc.s.p.dao.ProdectCategoryDao.deleteProductCategory-==> Parameters: 11(Long), 24(Long)
+2020-03-13 07:46:40.945[main]DEBUGc.s.p.dao.ProdectCategoryDao.deleteProductCategory-<==    Updates: 1
+2020-03-13 07:46:40.947[main]DEBUGc.s.p.dao.ProdectCategoryDao.deleteProductCategory-==>  Preparing: DELETE FROM tb_product_category WHERE product_category_id = ? AND shop_id = ? 
+2020-03-13 07:46:40.947[main]DEBUGc.s.p.dao.ProdectCategoryDao.deleteProductCategory-==> Parameters: 10(Long), 24(Long)
+2020-03-13 07:46:40.951[main]DEBUGc.s.p.dao.ProdectCategoryDao.deleteProductCategory-<==    Updates: 1
+2020-03-13 07:46:40.952[main]DEBUGc.s.p.dao.ProdectCategoryDao.deleteProductCategory-==>  Preparing: DELETE FROM tb_product_category WHERE product_category_id = ? AND shop_id = ? 
+2020-03-13 07:46:40.952[main]DEBUGc.s.p.dao.ProdectCategoryDao.deleteProductCategory-==> Parameters: 9(Long), 24(Long)
+2020-03-13 07:46:40.955[main]DEBUGc.s.p.dao.ProdectCategoryDao.deleteProductCategory-<==    Updates: 1
